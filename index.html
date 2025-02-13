@@ -1,1 +1,125 @@
-<h3> QUALQUER COISA </h3>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parabéns!</title>
+    <style>
+        /* Fonte importada do Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradiente de fundo */
+            color: #333;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            transition: background 0.5s ease; /* Suaviza a transição do fundo */
+        }
+
+        .message-container {
+            background-color: rgba(255, 255, 255, 0.9); /* Fundo branco com transparência */
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+            width: 90%;
+            text-align: center;
+            line-height: 1.6;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Efeito de zoom ao passar o mouse sobre a caixa */
+        .message-container:hover {
+            transform: scale(1.05);
+        }
+
+        .message-container h1 {
+            color: #4CAF50;
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra no texto */
+            transition: color 0.3s ease;
+        }
+
+        .message-container p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.8;
+            transition: transform 0.3s ease;
+        }
+
+        /* Efeito de interatividade nas mensagens */
+        .message-container p:hover {
+            transform: translateX(10px);
+            color: #ff7e5f; /* Muda a cor ao passar o mouse */
+        }
+
+        /* Estilo do botão */
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #4CAF50;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+            transform: translateY(-3px); /* Efeito de elevação */
+        }
+
+        /* Responsividade para telas menores */
+        @media (max-width: 600px) {
+            .message-container {
+                padding: 20px;
+            }
+
+            .message-container h1 {
+                font-size: 28px;
+            }
+
+            .message-container p {
+                font-size: 16px;
+            }
+
+            .button {
+                font-size: 16px;
+                padding: 12px 24px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="message-container">
+    <h1>Parabéns pela sua incrível jornada!</h1>
+    <p>
+        Hoje é um dia para celebrar você, sua história e cada passo dado rumo ao seu sucesso. Em cada desafio, você mostrou que a persistência e a coragem são suas maiores aliadas. Cada momento de esforço, cada sacrifício, cada dúvida vencida, te trouxeram até aqui – e não há dúvida de que esse é só o começo.
+    </p>
+    <p>
+        Você não chegou até aqui por acaso. Seu trabalho árduo, sua dedicação incansável e a forma como você abraçou cada aprendizado, mesmo nos momentos difíceis, são as provas de que o verdadeiro sucesso é construído dia após dia. Não é só sobre alcançar um objetivo, é sobre ser imbatível, sobre acreditar em si mesmo, mesmo quando a jornada parece incerta.
+    </p>
+    <p>
+        Hoje, celebramos não apenas suas conquistas, mas a pessoa incrível que você é. Sua paixão, sua visão e sua capacidade de transformar desafios em oportunidades são o que realmente fazem de você uma inspiração. E o mais bonito disso tudo é que o caminho que você percorre, cheio de momentos de superação, só faz crescer ainda mais o brilho que já é visível em você.
+    </p>
+    <p>
+        Seus sonhos são grandes e merecem ser vividos com toda a intensidade. E o que você conquistou até agora é só o reflexo do seu potencial imenso. Continue acreditando em si, siga com essa garra que só você tem e nunca duvide do seu poder. O mundo está ao seu alcance, e a única direção que você deve seguir é para frente.
+    </p>
+    <p>
+        Parabéns por ser essa pessoa extraordinária, por não desistir e por fazer tudo isso parecer tão inspirador. O futuro é seu – e ele vai ser ainda mais brilhante do que você imagina.
+    </p>
+</div>
+
+</body>
+</html>
