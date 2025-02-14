@@ -7,19 +7,18 @@
     <style>
         /* Fonte importada do Google Fonts */
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
-
         body {
             font-family: 'Roboto', sans-serif;
-            background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradiente de fundo */
+            background-color: #a2c9e7; /* Azul bebê */
             color: #333;
             margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            overflow: hidden;
             transition: background 0.5s ease; /* Suaviza a transição do fundo */
         }
-
         .message-container {
             background-color: rgba(255, 255, 255, 0.9); /* Fundo branco com transparência */
             padding: 40px;
@@ -29,23 +28,22 @@
             width: 90%;
             text-align: center;
             line-height: 1.6;
-            transition: transform 0.3s ease-in-out;
+            display: none; /* Esconde a mensagem até o carregamento da imagem */
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
         }
-
-        /* Efeito de zoom ao passar o mouse sobre a caixa */
-        .message-container:hover {
-            transform: scale(1.05);
+        .message-container.show {
+            display: block;
+            opacity: 1;
         }
-
         .message-container h1 {
-            color: #4CAF50;
+            color: #ff6f61; /* Cor mais suave para o título */
             font-size: 36px;
             margin-bottom: 20px;
             font-weight: 700;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra no texto */
             transition: color 0.3s ease;
         }
-
         .message-container p {
             font-size: 18px;
             color: #555;
@@ -53,73 +51,84 @@
             line-height: 1.8;
             transition: transform 0.3s ease;
         }
-
         /* Efeito de interatividade nas mensagens */
         .message-container p:hover {
             transform: translateX(10px);
-            color: #ff7e5f; /* Muda a cor ao passar o mouse */
+            color: #ff6f61; /* Muda a cor ao passar o mouse */
+        }
+        /* Estilo da imagem inicial */
+        .image-container {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .image-container img {
+            width: 80%; /* Aumenta o tamanho da imagem */
+            max-width: 800px; /* Limita a largura máxima */
+            height: auto;
+            animation: fadeIn 3s ease-out;
         }
 
-        /* Estilo do botão */
-        .button {
-            display: inline-block;
-            padding: 15px 30px;
-            font-size: 18px;
-            color: #fff;
-            background-color: #4CAF50;
-            border-radius: 8px;
-            text-decoration: none;
-            margin-top: 20px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-
-        .button:hover {
-            background-color: #45a049;
-            transform: translateY(-3px); /* Efeito de elevação */
-        }
-
-        /* Responsividade para telas menores */
-        @media (max-width: 600px) {
-            .message-container {
-                padding: 20px;
+        /* Animação para mostrar a imagem */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
             }
-
-            .message-container h1 {
-                font-size: 28px;
-            }
-
-            .message-container p {
-                font-size: 16px;
-            }
-
-            .button {
-                font-size: 16px;
-                padding: 12px 24px;
+            100% {
+                opacity: 1;
             }
         }
-
     </style>
 </head>
 <body>
+    <!-- Imagem de carregamento -->
+    <div class="image-container">
+        <img src="https://media-gru2-2.cdn.whatsapp.net/v/t61.24694-24/473397377_1151663906468330_108356036101443601_n.jpg?ccb=11-4&oh=01_Q5AaIM5x9O8_25XBAaQEeJKBVZdYOn5sLolW_mQ5TRYWV5bO&oe=67B8A2EC&_nc_sid=5e03e0&_nc_cat=105" alt="Imagem de festa">
+        <p>Carregando...</p>
+    </div>
 
-<div class="message-container">
-    <h1>Parabéns pela sua incrível jornada!</h1>
-    <p>
-        Hoje é um dia para celebrar você, sua história e cada passo dado rumo ao seu sucesso. Em cada desafio, você mostrou que a persistência e a coragem são suas maiores aliadas. Cada momento de esforço, cada sacrifício, cada dúvida vencida, te trouxeram até aqui – e não há dúvida de que esse é só o começo.
-    </p>
-    <p>
-        Você não chegou até aqui por acaso. Seu trabalho árduo, sua dedicação incansável e a forma como você abraçou cada aprendizado, mesmo nos momentos difíceis, são as provas de que o verdadeiro sucesso é construído dia após dia. Não é só sobre alcançar um objetivo, é sobre ser imbatível, sobre acreditar em si mesmo, mesmo quando a jornada parece incerta.
-    </p>
-    <p>
-        Hoje, celebramos não apenas suas conquistas, mas a pessoa incrível que você é. Sua paixão, sua visão e sua capacidade de transformar desafios em oportunidades são o que realmente fazem de você uma inspiração. E o mais bonito disso tudo é que o caminho que você percorre, cheio de momentos de superação, só faz crescer ainda mais o brilho que já é visível em você.
-    </p>
-    <p>
-        Seus sonhos são grandes e merecem ser vividos com toda a intensidade. E o que você conquistou até agora é só o reflexo do seu potencial imenso. Continue acreditando em si, siga com essa garra que só você tem e nunca duvide do seu poder. O mundo está ao seu alcance, e a única direção que você deve seguir é para frente.
-    </p>
-    <p>
-        Parabéns por ser essa pessoa extraordinária, por não desistir e por fazer tudo isso parecer tão inspirador. O futuro é seu – e ele vai ser ainda mais brilhante do que você imagina.
-    </p>
-</div>
+    <!-- Mensagem de Parabéns -->
+    <div class="message-container" id="message-container">
+        <h1>Parabéns pela sua incrível jornada! 🥳 🎉</h1>
+        <p>
+            Hoje é um dia para celebrar você, sua história e cada passo dado rumo ao seu sucesso. Em cada desafio, você mostrou que a persistência e a coragem são suas maiores aliadas. Cada momento de esforço, cada sacrifício, cada dúvida vencida, te trouxeram até aqui – e não há dúvida de que esse é só o começo.
+        </p>
+        <p>
+            Você não chegou até aqui por acaso. Seu trabalho árduo, sua dedicação incansável e a forma como você abraçou cada aprendizado, mesmo nos momentos difíceis, são as provas de que o verdadeiro sucesso é construído dia após dia. Não é só sobre alcançar um objetivo, é sobre ser imbatível, sobre acreditar em si mesmo, mesmo quando a jornada parece incerta.
+        </p>
+        <p>
+            Hoje, celebramos não apenas suas conquistas, mas a pessoa incrível que você é. Sua paixão, sua visão e sua capacidade de transformar desafios em oportunidades são o que realmente fazem de você uma inspiração. E o mais bonito disso tudo é que o caminho que você percorre, cheio de momentos de superação, só faz crescer ainda mais o brilho que já é visível em você.
+        </p>
+        <p>
+            Seus sonhos são grandes e merecem ser vividos com toda a intensidade. E o que você conquistou até agora é só o reflexo do seu potencial imenso. Continue acreditando em si, siga com essa garra que só você tem e nunca duvide do seu poder. O mundo está ao seu alcance, e a única direção que você deve seguir é para frente.
+        </p>
+        <p>
+            Parabéns por ser essa pessoa extraordinária, por não desistir e por fazer tudo isso parecer tão inspirador. O futuro é seu – e ele vai ser ainda mais brilhante do que você imagina.
+        </p>
+    </div>
 
+    <!-- Mensagem de Agradecimento -->
+    <div class="message-container" id="thank-you-message">
+        <h1>Obrigado pela paciência e desculpa pela demora!</h1>
+    </div>
+
+    <script>
+        // Atraso para mostrar a primeira mensagem por 2 minutos
+        window.onload = function() {
+            setTimeout(function() {
+                document.querySelector('.image-container').style.display = 'none'; // Esconde a imagem
+                document.getElementById('message-container').classList.add('show'); // Mostra a mensagem de parabéns
+            }, 3000); // 3 segundos de espera antes de mostrar a mensagem
+
+            // Após 2 minutos, esconde a primeira mensagem e exibe a segunda mensagem
+            setTimeout(function() {
+                document.getElementById('message-container').classList.remove('show'); // Esconde a mensagem de parabéns
+                document.getElementById('thank-you-message').classList.add('show'); // Mostra a mensagem de agradecimento
+            }, 120000); // 2 minutos em milissegundos
+        }
+    </script>
 </body>
 </html>
+
